@@ -1,6 +1,6 @@
 ---
 nom: "Pauline"
-titre: "Psychothérapeute – La psy des petits"
+titre: "Psychothérapeute, La psy des petits"
 sousTitre: "La psy des petits"
 accroche: "Thérapeute pour enfants et adolescents, Pauline accompagne les petits et leurs parents face aux émotions, difficultés scolaires et familiales."
 description: "Pauline est psychothérapeute spécialisée dans l'accompagnement des enfants et des adolescents. Elle propose des consultations bienveillantes, adaptées à chaque âge, pour aider les jeunes et leurs parents face aux émotions, aux difficultés scolaires et familiales."

@@ -1,6 +1,6 @@
 ---
 nom: "Cloé"
-titre: "Diététicienne – C.S.V Diététique"
+titre: "Diététicienne, C.S.V Diététique"
 sousTitre: "C.S.V Diététique"
 accroche: "Une diététique humaine, bienveillante et individualisée, loin des régimes restrictifs, pour une relation sereine et durable avec l'alimentation."
 description: "Diététicienne diplômée d'État depuis 2015, Cloé propose une prise en charge globale, personnalisée et durable. Sa Méthode C.S.V (Conseil, Santé, Vitalité) s'adapte au mode de vie, aux contraintes et aux objectifs de santé de chacun."
@@ -12,15 +12,15 @@ specialites:
   - "Alimentation et grossesse"
   - "Nutrition pédiatrique"
 tarifs:
-  - prestation: "Accompagnement 1 mois – Conseil"
+  - prestation: "Accompagnement 1 mois : Conseil"
     description: "Premier bilan et remise à plat des habitudes alimentaires pour poser des bases solides et adaptées."
     prix: "105 €"
     note: "Bilan nutritionnel (60 €) + suivi (45 €)"
-  - prestation: "Accompagnement 6 mois – Santé"
+  - prestation: "Accompagnement 6 mois : Santé"
     description: "Suivi en profondeur pour une évolution progressive et une meilleure compréhension du corps."
     prix: "270 €"
     note: "Remise de 15 € incluse"
-  - prestation: "Accompagnement 12 mois – Vitalité"
+  - prestation: "Accompagnement 12 mois : Vitalité"
     description: "Transformation durable avec suivi global et adaptation continue aux évolutions de vie."
     prix: "495 €"
     note: "Remise de 60 € incluse"
@@ -41,7 +41,7 @@ Je défends une diététique humaine, bienveillante et individualisée, fondée 
 
 Mon accompagnement ne se limite pas à l'alimentation : il prend en compte l'ensemble du mode de vie (rythmes, habitudes, contraintes, environnement, relation à l'alimentation), afin de proposer des solutions réalistes, applicables et pérennes.
 
-J'ai développé la **Méthode C.S.V** – Conseil, Santé, Vitalité – une approche structurée en trois formules complémentaires pour un suivi progressif et évolutif, en fonction des besoins et du rythme de chacun.
+J'ai développé la **Méthode C.S.V** (Conseil, Santé, Vitalité), une approche structurée en trois formules complémentaires pour un suivi progressif et évolutif, en fonction des besoins et du rythme de chacun.
 
 ## Pour qui ?
 

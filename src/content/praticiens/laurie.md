@@ -1,6 +1,6 @@
 ---
 nom: "Laurie"
-titre: "Sophrologue – Sophr'O"
+titre: "Sophrologue, Sophr'O"
 accroche: "Ancienne infirmière, Laurie vous accompagne avec la sophrologie vers un apaisement et un mieux-être : gestion du stress, des émotions, des douleurs et du sommeil."
 description: "Laurie Ingles, sophrologue certifiée RNCP et ancienne infirmière, propose des accompagnements personnalisés en sophrologie pour cheminer vers l'apaisement et le mieux-être. Séances en cabinet à Elne, en visio, à domicile ou en groupe."
 specialites:

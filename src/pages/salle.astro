@@ -7,6 +7,7 @@ import InfoCard from '../components/InfoCard.astro';
 import HeroSection from '../components/HeroSection.astro';
 import { Image } from 'astro:assets';
 
+import salleHero from '../assets/photos/salle/salle-ananda-hero.jpg';
 import salleImg1 from '../assets/photos/salle/salle-1.jpg';
 import salleImg2 from '../assets/photos/salle/salle-2.jpg';
 import salleImg3 from '../assets/photos/salle/salle-3.jpg';
@@ -41,30 +42,30 @@ const equipements = [
 ];
 
 const usages = [
-  { emoji: '🧘', label: 'Cours collectifs', desc: 'Yoga, pilates, qi gong, méditation, danse' },
-  { emoji: '✨', label: 'Ateliers bien-être', desc: 'Aromathérapie, nutrition, gestion du stress' },
-  { emoji: '📚', label: 'Formations', desc: 'Modules courts, certifications, supervisions' },
-  { emoji: '🎤', label: 'Conférences', desc: 'Santé, bien-être, présentations thématiques' },
-  { emoji: '💬', label: 'Cercles & groupes', desc: 'Parole, constellations, soutien' },
-  { emoji: '🌿', label: 'Retraites urbaines', desc: 'Journées yoga + massage + nutrition' },
+  { icon: 'heart', label: 'Cours collectifs', desc: 'Yoga, pilates, qi gong, méditation, danse' },
+  { icon: 'star', label: 'Ateliers bien-être', desc: 'Aromathérapie, nutrition, gestion du stress' },
+  { icon: 'building', label: 'Formations', desc: 'Modules courts, certifications, supervisions' },
+  { icon: 'chat', label: 'Conférences', desc: 'Santé, bien-être, présentations thématiques' },
+  { icon: 'users', label: 'Cercles & groupes', desc: 'Parole, constellations, soutien' },
+  { icon: 'sun', label: 'Retraites urbaines', desc: 'Journées yoga + massage + nutrition' },
 ];
 ---
 
 <BaseLayout
-  title="La Salle Lotus"
-  description="Louez la Salle Lotus de l'Espace Satya à Elne : 38 m² climatisés pour vos cours collectifs, ateliers, formations. À partir de 15€/h. Parking gratuit."
+  title="L'Espace Ananda"
+  description="Louez l'Espace Ananda de l'Espace Satya à Elne : 38 m² climatisés pour vos cours collectifs, ateliers, formations. À partir de 15€/h. Parking gratuit."
 >
 
     <!-- Hero -->
     <HeroSection
-      image={salleImg1}
-      imageAlt="La Salle Lotus de l'Espace Satya à Elne"
+      image={salleHero}
+      imageAlt="L'Espace Ananda de l'Espace Satya à Elne"
       overlayClass="bg-gradient-to-t from-warm-900/80 via-warm-900/40 to-transparent"
       contentAlign="bottom"
       contentMaxWidth="max-w-5xl"
     >
       <p class="font-accent text-sage-200 text-xl mb-2">Espace à louer</p>
-      <h1 class="font-heading text-5xl md:text-7xl font-light text-white mb-3 leading-tight">La Salle Lotus 🪷</h1>
+      <h1 class="font-heading text-5xl md:text-7xl font-light text-white mb-3 leading-tight">L'Espace Ananda</h1>
       <p class="font-body text-warm-200 text-lg max-w-xl">
         38 m² climatisés au cœur de l'Espace Satya – idéale pour vos cours collectifs, ateliers et formations.
       </p>
@@ -75,7 +76,7 @@ const usages = [
       <div class="max-w-6xl mx-auto">
         <SectionHeader
           title="Un espace pensé pour votre activité"
-          description="Intégrée dans un cabinet de bien-être actif, la Salle Lotus offre un cadre professionnel et chaleureux unique dans le bassin d'Elne."
+          description="Intégré dans un cabinet de bien-être actif, l'Espace Ananda offre un cadre professionnel et chaleureux unique dans le bassin d'Elne."
         />
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
           {equipements.map((item) => (
@@ -89,7 +90,7 @@ const usages = [
             <h3 class="font-heading text-3xl font-light text-warm-900 mb-5">Un avantage unique : l'écosystème bien-être</h3>
             <div class="space-y-4 font-body text-warm-600 leading-relaxed">
               <p>
-                La Salle Lotus ne ressemble à aucune autre salle de location de la région. En étant intégrée dans l'Espace Satya, vous bénéficiez d'une prescription naturelle de la part des 7 praticiennes résidentes et de leur clientèle fidèle.
+                L'Espace Ananda ne ressemble à aucune autre salle de location de la région. En étant intégré dans l'Espace Satya, vous bénéficiez d'une prescription naturelle de la part des 7 praticiennes résidentes et de leur clientèle fidèle.
               </p>
               <p>
                 Positionnée entre Perpignan (15 min) et la côte (Argelès-sur-Mer, 10 min), avec le parking gratuit du centre commercial Épicentre, elle est accessible pour un bassin de chalandise de plus de 50 000 habitants.
@@ -114,15 +115,15 @@ const usages = [
           <!-- Galerie mini -->
           <div class="grid grid-cols-2 gap-3">
             <div class="rounded-2xl overflow-hidden shadow-md row-span-2">
-              <Image src={salleImg2} alt="Intérieur de la Salle Lotus" width={400} height={500}
+              <Image src={salleImg2} alt="Intérieur de l'Espace Ananda" width={400} height={500}
                      class="w-full h-full object-cover" loading="lazy" />
             </div>
             <div class="rounded-2xl overflow-hidden shadow-md">
-              <Image src={salleImg3} alt="Espace de la Salle Lotus" width={400} height={240}
+              <Image src={salleImg3} alt="L'Espace Ananda, vue d'ensemble" width={400} height={240}
                      class="w-full h-full object-cover" loading="lazy" />
             </div>
             <div class="rounded-2xl overflow-hidden shadow-md">
-              <Image src={salleImg1} alt="La Salle Lotus de l'Espace Satya" width={400} height={240}
+              <Image src={salleImg1} alt="L'Espace Ananda de l'Espace Satya" width={400} height={240}
                      class="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
@@ -136,13 +137,13 @@ const usages = [
         <SectionHeader
           title="Pour quelles activités ?"
           titleSize="3xl-4xl"
-          description="La Salle Lotus s'adapte à toutes vos pratiques de bien-être."
+          description="L'Espace Ananda s'adapte à toutes vos pratiques de bien-être."
           mb="10"
         />
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
           {usages.map((u) => (
             <div class="bg-white rounded-2xl p-5 border border-warm-200/50 shadow-sm">
-              <span class="text-2xl mb-3 block">{u.emoji}</span>
+              <Icon name={u.icon} class="w-6 h-6 text-sage-500 mb-3" />
               <h3 class="font-heading text-lg font-semibold text-warm-900 mb-1">{u.label}</h3>
               <p class="font-body text-sm text-warm-500 leading-relaxed">{u.desc}</p>
             </div>
@@ -243,7 +244,7 @@ const usages = [
             la fréquence envisagée et vos disponibilités.
           </p>
           <Button
-            href="mailto:contact@espacesatya.fr?subject=Demande%20de%20réservation%20Salle%20Lotus"
+            href="mailto:contact@espacesatya.fr?subject=Demande%20de%20réservation%20Espace%20Ananda"
             size="lg"
           >
             <Icon name="email" class="w-5 h-5" strokeWidth={1.5} />

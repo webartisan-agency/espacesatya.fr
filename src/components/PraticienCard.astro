@@ -12,6 +12,10 @@ interface Props {
   photoAlt: string;
   accroche: string;
   specialites: string[];
+  telephone?: string;
+  email?: string;
+  doctolib?: string;
+  siteWeb?: string;
   nouveau?: boolean;
   variant?: 'compact' | 'full';
 }
@@ -25,6 +29,10 @@ const {
   photoAlt,
   accroche,
   specialites,
+  telephone,
+  email,
+  doctolib,
+  siteWeb,
   nouveau = false,
   variant = 'compact',
 } = Astro.props;
@@ -94,6 +102,36 @@ const href = `${base}praticiens/${slug}/`;
         </span>
       ))}
     </div>
+
+    <!-- Coordonnées -->
+    {(telephone || email || doctolib || siteWeb) && (
+      <div class="flex flex-wrap items-center gap-3 mt-4 pt-3 border-t border-warm-100">
+        {telephone && (
+          <a href={`tel:${telephone.replace(/\s/g, '')}`} class="inline-flex items-center gap-1 font-body text-xs text-warm-500 hover:text-sage-600 transition-colors" onclick="event.stopPropagation()">
+            <Icon name="phone" class="w-3.5 h-3.5" strokeWidth={1.5} />
+            {telephone}
+          </a>
+        )}
+        {email && (
+          <a href={`mailto:${email}`} class="inline-flex items-center gap-1 font-body text-xs text-warm-500 hover:text-sage-600 transition-colors" onclick="event.stopPropagation()">
+            <Icon name="email" class="w-3.5 h-3.5" strokeWidth={1.5} />
+            Email
+          </a>
+        )}
+        {doctolib && (
+          <a href={doctolib} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-body text-xs font-medium text-sage-600 hover:text-sage-700 transition-colors" onclick="event.stopPropagation()">
+            <Icon name="external-link" class="w-3.5 h-3.5" strokeWidth={1.5} />
+            Doctolib
+          </a>
+        )}
+        {siteWeb && !doctolib && (
+          <a href={siteWeb} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-body text-xs font-medium text-sage-600 hover:text-sage-700 transition-colors" onclick="event.stopPropagation()">
+            <Icon name="external-link" class="w-3.5 h-3.5" strokeWidth={1.5} />
+            Site web
+          </a>
+        )}
+      </div>
+    )}
 
     <!-- CTA flèche -->
     <div class="flex items-center justify-end mt-4">

@@ -13,6 +13,7 @@ photo: "../../assets/photos/praticiens/laurie-1.jpg"
 photoAlt: "Laurie, sophrologue à l'Espace Satya d'Elne"
 ordre: 2
 actif: true
+siteWeb: "https://www.crenolibre.fr/therapeute/sophrologue/elne/66200/158481-laurie_ingles"
 ---
 
 ## Mon approche

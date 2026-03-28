@@ -15,6 +15,7 @@ photoAlt: "Pauline, psychothérapeute spécialisée enfants et adolescents à l'
 ordre: 6
 actif: true
 nouveau: false
+siteWeb: "https://www.lapsydespetits.fr"
 ---
 
 ## Mon approche

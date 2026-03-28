@@ -13,6 +13,7 @@ photo: "../../assets/photos/praticiens/laurence-1.jpg"
 photoAlt: "Laurence, hypnothérapeute et praticienne EFT à l'Espace Satya d'Elne"
 ordre: 3
 actif: true
+siteWeb: "https://www.facebook.com/people/Laurence-Gaudy/61587349582218/"
 ---
 
 ## Mon approche

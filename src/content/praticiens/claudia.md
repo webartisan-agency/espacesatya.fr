@@ -13,6 +13,7 @@ photo: "../../assets/photos/praticiens/claudia-1.jpg"
 photoAlt: "Claudia, praticienne en massages et soins à l'Espace Satya d'Elne"
 ordre: 4
 actif: true
+siteWeb: "https://www.planity.com/claudia-massage-et-soins-66200-elne"
 ---
 
 ## Mon approche

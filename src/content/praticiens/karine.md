@@ -13,6 +13,7 @@ photo: "../../assets/photos/praticiens/karine-1.jpg"
 photoAlt: "Karine, praticienne en soins énergétiques et magnétisme à l'Espace Satya d'Elne"
 ordre: 5
 actif: true
+siteWeb: "https://karine-pigeon-energeticienne.fr"
 ---
 
 ## Mon approche

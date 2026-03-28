@@ -1,41 +1,41 @@
 @import "tailwindcss";
 
 @theme {
-  /* Sage — couleur signature */
-  --color-sage-50: #F4F7F1;
-  --color-sage-100: #DDE8D5;
-  --color-sage-200: #C5D4B8;
-  --color-sage-300: #ADBE9B;
-  --color-sage-400: #9CAF8C;
-  --color-sage-500: #8B9E7C;
-  --color-sage-600: #748A65;
-  --color-sage-700: #5D7A4F;
-  --color-sage-800: #4A6140;
-  --color-sage-900: #374830;
+  /* Sage — Vert Sauge / Olive (Sérénité & Nature) */
+  --color-sage-50: #f5f5f1;
+  --color-sage-100: #e6e7de;
+  --color-sage-200: #ced1c2;
+  --color-sage-300: #b7b7a4;   /* ash-grey */
+  --color-sage-400: #a5a58d;   /* dry-sage */
+  --color-sage-500: #8e9178;
+  --color-sage-600: #7a7e65;
+  --color-sage-700: #6b705c;   /* dusty-olive */
+  --color-sage-800: #525644;
+  --color-sage-900: #3c3f30;
 
-  /* Terracotta — accent chaud */
-  --color-terra-50: #FBF3F0;
-  --color-terra-100: #F0D8CE;
-  --color-terra-200: #E4BBAC;
-  --color-terra-300: #D4A08E;
-  --color-terra-400: #C48874;
-  --color-terra-500: #B5705A;
-  --color-terra-600: #9E5C47;
-  --color-terra-700: #844A3A;
-  --color-terra-800: #6A3B2E;
-  --color-terra-900: #502C22;
+  /* Terra → Bronze / Sable (Chaleur & Douceur) */
+  --color-terra-50: #fef8f3;
+  --color-terra-100: #fbe9d8;
+  --color-terra-200: #eed5b8;
+  --color-terra-300: #ddbea9;   /* desert-sand */
+  --color-terra-400: #d4ac91;
+  --color-terra-500: #cb997e;   /* light-bronze */
+  --color-terra-600: #b5856a;
+  --color-terra-700: #9a7058;
+  --color-terra-800: #7d5a46;
+  --color-terra-900: #604434;
 
-  /* Warm — neutres chauds */
-  --color-warm-50: #FAF7F2;
-  --color-warm-100: #F0EBE3;
-  --color-warm-200: #E8E0D4;
-  --color-warm-300: #D4C8B8;
-  --color-warm-400: #B8A898;
-  --color-warm-500: #9C8878;
-  --color-warm-600: #6B5145;
-  --color-warm-700: #5A4339;
-  --color-warm-800: #3D2D26;
-  --color-warm-900: #2D2622;
+  /* Warm — Beige Sable & Marron Terre */
+  --color-warm-50: #faf7f2;
+  --color-warm-100: #f5ede3;
+  --color-warm-200: #ece0d2;
+  --color-warm-300: #ddd0c0;
+  --color-warm-400: #c4b29e;
+  --color-warm-500: #a89888;
+  --color-warm-600: #877264;
+  --color-warm-700: #6b5a4d;   /* marron terre */
+  --color-warm-800: #4d3f35;
+  --color-warm-900: #332b24;
 
   /* Typographies */
   --font-heading: 'Cormorant Garamond', serif;

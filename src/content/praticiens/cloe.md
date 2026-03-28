@@ -14,6 +14,7 @@ photo: "../../assets/photos/praticiens/cloe-1.jpg"
 photoAlt: "Cloé, diététicienne à l'Espace Satya d'Elne"
 ordre: 7
 actif: true
+doctolib: "https://www.doctolib.fr/dieteticien/le-boulou/cloe-sage-vallier"
 ---
 
 ## Mon approche

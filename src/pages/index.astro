@@ -35,6 +35,7 @@ const valeurs = [
       image={heroImg}
       imageAlt="Ambiance chaleureuse de l'Espace Satya à Elne"
       height="full"
+      overlayClass="bg-gradient-to-br from-warm-900/85 via-warm-800/70 to-sage-900/55"
       showScrollHint
     >
       <p class="font-accent text-sage-200 text-2xl mb-4">Bienvenue à l'</p>
@@ -124,6 +125,10 @@ const valeurs = [
               photoAlt={p.data.photoAlt}
               accroche={p.data.accroche}
               specialites={p.data.specialites}
+              telephone={p.data.telephone}
+              email={p.data.email}
+              doctolib={p.data.doctolib}
+              siteWeb={p.data.siteWeb}
               nouveau={p.data.nouveau}
               variant="compact"
             />
@@ -140,7 +145,7 @@ const valeurs = [
     </section>
 
     <!-- ═══ SALLE LOTUS ══════════════════════════════════════════════════ -->
-    <CtaSection title="La Salle Lotus 🪷" subtitle="Espace à louer" bgClass="bg-sage-700"
+    <CtaSection title="L'Espace Ananda" subtitle="Salle à louer" bgClass="bg-sage-700"
       description="38 m² climatisés au cœur d'un cabinet de bien-être."
     >
       <div slot="background" class="absolute inset-0 opacity-5" aria-hidden="true">

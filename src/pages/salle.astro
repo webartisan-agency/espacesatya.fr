@@ -2,6 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import IconBadge from '../components/IconBadge.astro';
 import { Image } from 'astro:assets';
 
 import salleImg1 from '../assets/photos/DSC_8979.jpg';
@@ -78,20 +81,18 @@ const usages = [
     <!-- Caractéristiques -->
     <section class="py-16 md:py-20 px-4 md:px-8 bg-warm-50">
       <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="font-heading text-4xl font-light text-warm-900 mb-3">Un espace pensé pour votre activité</h2>
-          <p class="font-body text-warm-500 max-w-xl mx-auto">
-            Intégrée dans un cabinet de bien-être actif, la Salle B3 offre un cadre professionnel et chaleureux unique dans le bassin d'Elne.
-          </p>
-        </div>
+        <SectionHeader
+          title="Un espace pensé pour votre activité"
+          description="Intégrée dans un cabinet de bien-être actif, la Salle B3 offre un cadre professionnel et chaleureux unique dans le bassin d'Elne."
+        />
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
           {equipements.map((item) => (
             <div class="bg-white rounded-2xl p-5 text-center shadow-sm border border-warm-200/50">
-              <div class="w-10 h-10 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <IconBadge size="sm" centered class="mb-3">
                 <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={item.icon} />
                 </svg>
-              </div>
+              </IconBadge>
               <p class="font-heading text-warm-900 font-semibold text-sm">{item.label}</p>
               <p class="font-body text-warm-400 text-xs mt-1 leading-snug">{item.desc}</p>
             </div>
@@ -150,10 +151,12 @@ const usages = [
     <!-- Usages -->
     <section class="py-16 px-4 md:px-8 bg-warm-100">
       <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-10">
-          <h2 class="font-heading text-3xl md:text-4xl font-light text-warm-900 mb-3">Pour quelles activités ?</h2>
-          <p class="font-body text-warm-500">La Salle B3 s'adapte à toutes vos pratiques de bien-être.</p>
-        </div>
+        <SectionHeader
+          title="Pour quelles activités ?"
+          titleSize="3xl-4xl"
+          description="La Salle B3 s'adapte à toutes vos pratiques de bien-être."
+          mb="10"
+        />
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
           {usages.map((u) => (
             <div class="bg-white rounded-2xl p-5 border border-warm-200/50 shadow-sm">
@@ -169,11 +172,12 @@ const usages = [
     <!-- Tarifs -->
     <section class="py-16 md:py-24 px-4 md:px-8 bg-warm-50" id="tarifs" aria-labelledby="tarifs-title">
       <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-          <p class="font-accent text-terra-500 text-xl mb-2">Grille tarifaire</p>
-          <h2 id="tarifs-title" class="font-heading text-4xl font-light text-warm-900 mb-3">Tarifs de location</h2>
-          <p class="font-body text-warm-500">Des tarifs adaptés au pouvoir d'achat local, bien en dessous des prix perpignanais.</p>
-        </div>
+        <SectionHeader
+          subtitle="Grille tarifaire"
+          title="Tarifs de location"
+          titleId="tarifs-title"
+          description="Des tarifs adaptés au pouvoir d'achat local, bien en dessous des prix perpignanais."
+        />
 
         <!-- À la carte -->
         <div class="mb-14">
@@ -242,30 +246,29 @@ const usages = [
     <!-- Contact réservation -->
     <section class="py-16 md:py-20 px-4 md:px-8 bg-warm-100" id="reservation" aria-labelledby="reservation-title">
       <div class="max-w-2xl mx-auto">
-        <div class="text-center mb-10">
-          <p class="font-accent text-sage-600 text-xl mb-2">Prendre contact</p>
-          <h2 id="reservation-title" class="font-heading text-4xl font-light text-warm-900 mb-3">
-            Demander un créneau
-          </h2>
-          <p class="font-body text-warm-500">
-            Écrivez-nous et nous vous recontactons sous 24h pour valider votre demande.
-          </p>
-        </div>
+        <SectionHeader
+          subtitle="Prendre contact"
+          subtitleColor="sage"
+          title="Demander un créneau"
+          titleId="reservation-title"
+          description="Écrivez-nous et nous vous recontactons sous 24h pour valider votre demande."
+          mb="10"
+        />
 
         <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-warm-200 text-center">
           <p class="font-body text-warm-600 leading-relaxed mb-6">
             Indiquez-nous dans votre email votre type d'activité, le nombre de participants,
             la fréquence envisagée et vos disponibilités.
           </p>
-          <a
+          <Button
             href="mailto:contact@espacesatya.fr?subject=Demande%20de%20réservation%20Salle%20B3"
-            class="inline-flex items-center gap-2 bg-sage-700 text-white font-body font-semibold px-8 py-4 rounded-full hover:bg-sage-800 transition-colors duration-200 shadow-md hover:shadow-lg"
+            size="lg"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             Envoyer ma demande par email
-          </a>
+          </Button>
           <p class="font-body text-xs text-warm-500 mt-4">contact@espacesatya.fr</p>
         </div>
       </div>

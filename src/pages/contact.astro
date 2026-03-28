@@ -2,6 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import IconBadge from '../components/IconBadge.astro';
 
 const base = import.meta.env.BASE_URL;
 ---
@@ -15,12 +18,18 @@ const base = import.meta.env.BASE_URL;
 
     <!-- Header de page -->
     <section class="bg-gradient-to-br from-sage-100 to-warm-100 py-16 md:py-20 px-4 md:px-8">
-      <div class="max-w-4xl mx-auto text-center">
-        <p class="font-accent text-sage-600 text-xl mb-3">Nous trouver</p>
-        <h1 class="font-heading text-5xl md:text-6xl font-light text-warm-900 mb-5">Contact & Accès</h1>
-        <p class="font-body text-warm-600 text-lg max-w-xl mx-auto leading-relaxed">
-          Venez nous rendre visite à Elne, ou écrivez-nous pour toute question sur nos praticien·ne·s ou la Salle B3.
-        </p>
+      <div class="max-w-4xl mx-auto">
+        <SectionHeader
+          subtitle="Nous trouver"
+          subtitleColor="sage"
+          title="Contact & Accès"
+          titleTag="h1"
+          titleSize="5xl-6xl"
+          description="Venez nous rendre visite à Elne, ou écrivez-nous pour toute question sur nos praticien·ne·s ou la Salle B3."
+          descriptionColor="warm-600"
+          descriptionSize="lg"
+          mb="0"
+        />
       </div>
     </section>
 
@@ -35,12 +44,12 @@ const base = import.meta.env.BASE_URL;
 
             <!-- Adresse -->
             <div class="mb-8 flex items-start gap-4">
-              <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center shrink-0 mt-1">
+              <IconBadge class="mt-1">
                 <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-              </div>
+              </IconBadge>
               <div>
                 <h3 class="font-heading text-lg font-semibold text-warm-900 mb-1">Adresse</h3>
                 <address class="not-italic font-body text-warm-600 leading-relaxed">
@@ -65,11 +74,11 @@ const base = import.meta.env.BASE_URL;
 
             <!-- Email -->
             <div class="mb-8 flex items-start gap-4">
-              <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center shrink-0 mt-1">
+              <IconBadge class="mt-1">
                 <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-              </div>
+              </IconBadge>
               <div>
                 <h3 class="font-heading text-lg font-semibold text-warm-900 mb-1">Email</h3>
                 <a href="mailto:contact@espacesatya.fr" class="font-body text-warm-600 hover:text-sage-600 transition-colors">
@@ -80,11 +89,11 @@ const base = import.meta.env.BASE_URL;
 
             <!-- Horaires -->
             <div class="mb-8 flex items-start gap-4">
-              <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center shrink-0 mt-1">
+              <IconBadge class="mt-1">
                 <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-              </div>
+              </IconBadge>
               <div>
                 <h3 class="font-heading text-lg font-semibold text-warm-900 mb-2">Horaires d'ouverture</h3>
                 <dl class="font-body text-warm-600 space-y-1.5">
@@ -103,11 +112,11 @@ const base = import.meta.env.BASE_URL;
 
             <!-- Accès -->
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center shrink-0 mt-1">
+              <IconBadge class="mt-1">
                 <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-              </div>
+              </IconBadge>
               <div>
                 <h3 class="font-heading text-lg font-semibold text-warm-900 mb-2">Comment venir</h3>
                 <ul class="font-body text-warm-600 space-y-2">
@@ -142,15 +151,16 @@ const base = import.meta.env.BASE_URL;
                   Pour toute question sur nos praticien·ne·s, pour prendre rendez-vous ou pour toute autre demande, 
                   envoyez-nous un email directement.
                 </p>
-                <a
+                <Button
                   href="mailto:contact@espacesatya.fr?subject=Contact%20Espace%20Satya"
-                  class="inline-flex items-center gap-2 bg-sage-700 text-white font-body font-semibold px-6 py-3.5 rounded-full hover:bg-sage-800 transition-colors duration-200 shadow-sm"
+                  size="md"
+                  shadow="sm"
                 >
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   Envoyer un email
-                </a>
+                </Button>
               </div>
 
               <div class="bg-warm-100 rounded-2xl p-6 border border-warm-200">

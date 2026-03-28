@@ -2,6 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import IconBadge from '../components/IconBadge.astro';
 import PraticienCard from '../components/PraticienCard.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
@@ -69,13 +72,12 @@ const valeurs = [
           17 bd des Évadés de France — Elne (66)
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href={`${base}praticiens/`}
-             class="inline-flex items-center justify-center gap-2 bg-sage-700 text-white font-body font-semibold px-8 py-4 rounded-full hover:bg-sage-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+          <Button href={`${base}praticiens/`} size="lg" shadow="lg" class="justify-center">
             Découvrir nos praticien·ne·s
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
-          </a>
+          </Button>
           <a href={`${base}contact/`}
              class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/30 font-body font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition-all duration-300">
             Nous contacter
@@ -126,18 +128,15 @@ const valeurs = [
     <!-- ═══ VALEURS ═══════════════════════════════════════════════════════ -->
     <section class="py-16 md:py-20 px-4 md:px-8 bg-warm-100">
       <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-          <p class="font-accent text-sage-600 text-xl mb-2">Notre philosophie</p>
-          <h2 class="font-heading text-3xl md:text-4xl font-light text-warm-900">Ce qui nous rassemble</h2>
-        </div>
+        <SectionHeader subtitle="Notre philosophie" subtitleColor="sage" title="Ce qui nous rassemble" titleSize="3xl-4xl" />
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {valeurs.map((v) => (
             <div class="bg-white rounded-2xl p-8 text-center shadow-sm border border-warm-200/50">
-              <div class="w-14 h-14 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-5">
+              <IconBadge size="lg" centered class="mb-5">
                 <svg class="w-7 h-7 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={v.iconPath} />
                 </svg>
-              </div>
+              </IconBadge>
               <h3 class="font-heading text-xl font-semibold text-warm-900 mb-3">{v.titre}</h3>
               <p class="font-body text-warm-600 text-sm leading-relaxed">{v.texte}</p>
             </div>
@@ -149,13 +148,12 @@ const valeurs = [
     <!-- ═══ PRATICIENS ════════════════════════════════════════════════════ -->
     <section class="py-16 md:py-24 px-4 md:px-8 bg-warm-50">
       <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-          <p class="font-accent text-terra-500 text-xl mb-2">Notre équipe</p>
-          <h2 class="font-heading text-4xl md:text-5xl font-light text-warm-900 mb-4">Nos praticien·ne·s</h2>
-          <p class="font-body text-warm-500 max-w-xl mx-auto leading-relaxed">
-            Sept spécialistes du bien-être qui partagent une vision commune : vous accompagner avec bienveillance vers votre mieux-être.
-          </p>
-        </div>
+        <SectionHeader
+          subtitle="Notre équipe"
+          title="Nos praticien·ne·s"
+          titleSize="4xl-5xl"
+          description="Sept spécialistes du bien-être qui partagent une vision commune : vous accompagner avec bienveillance vers votre mieux-être."
+        />
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {praticiens.map((p) => (
             <PraticienCard
@@ -249,23 +247,22 @@ const valeurs = [
             },
           ].map((item) => (
             <div class="bg-white rounded-2xl p-6 shadow-sm border border-warm-200/50">
-              <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <IconBadge centered class="mb-4">
                 <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={item.path} />
                 </svg>
-              </div>
+              </IconBadge>
               <h3 class="font-heading text-lg font-semibold text-warm-900 mb-2">{item.title}</h3>
               <p class="font-body text-warm-500 text-sm leading-relaxed whitespace-pre-line">{item.content}</p>
             </div>
           ))}
         </div>
-        <a href={`${base}contact/`}
-           class="inline-flex items-center gap-2 bg-sage-700 text-white font-body font-semibold px-8 py-4 rounded-full hover:bg-sage-800 transition-all duration-300 shadow-md hover:-translate-y-0.5">
+        <Button href={`${base}contact/`} size="lg">
           Voir le plan d'accès
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
-        </a>
+        </Button>
       </div>
     </section>
 

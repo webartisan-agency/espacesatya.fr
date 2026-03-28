@@ -1,0 +1,77 @@
+---
+interface Props {
+  subtitle?: string;
+  subtitleColor?: 'terra' | 'sage';
+  title: string;
+  titleSize?: '3xl' | '4xl' | '5xl' | '3xl-4xl' | '4xl-5xl' | '5xl-6xl';
+  titleTag?: 'h1' | 'h2';
+  titleId?: string;
+  description?: string;
+  descriptionColor?: 'warm-500' | 'warm-600';
+  descriptionSize?: 'base' | 'lg';
+  descriptionMaxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  mb?: '0' | '10' | '12' | '16';
+}
+
+const {
+  subtitle,
+  subtitleColor = 'terra',
+  title,
+  titleSize = '4xl',
+  titleTag = 'h2',
+  titleId,
+  description,
+  descriptionColor = 'warm-500',
+  descriptionSize = 'base',
+  descriptionMaxWidth = 'xl',
+  mb = '12',
+} = Astro.props;
+
+const subtitleColorClass = subtitleColor === 'sage' ? 'text-sage-600' : 'text-terra-500';
+
+const titleSizeClasses: Record<string, string> = {
+  '3xl': 'text-3xl',
+  '4xl': 'text-4xl',
+  '5xl': 'text-5xl',
+  '3xl-4xl': 'text-3xl md:text-4xl',
+  '4xl-5xl': 'text-4xl md:text-5xl',
+  '5xl-6xl': 'text-5xl md:text-6xl',
+};
+
+const descMaxWidthClasses: Record<string, string> = {
+  sm: 'max-w-sm',
+  md: 'max-w-md',
+  lg: 'max-w-lg',
+  xl: 'max-w-xl',
+  '2xl': 'max-w-2xl',
+};
+
+const mbClasses: Record<string, string> = {
+  '0': '',
+  '10': 'mb-10',
+  '12': 'mb-12',
+  '16': 'mb-16',
+};
+
+const descColorClasses: Record<string, string> = {
+  'warm-500': 'text-warm-500',
+  'warm-600': 'text-warm-600',
+};
+
+const descSizeClass = descriptionSize === 'lg' ? 'text-lg' : '';
+const titleBottomMargin = description ? 'mb-4' : '';
+---
+
+<div class:list={['text-center', mbClasses[mb]]}>
+  {subtitle && (
+    <p class:list={['font-accent text-xl mb-3', subtitleColorClass]}>{subtitle}</p>
+  )}
+  {titleTag === 'h1' ? (
+    <h1 class:list={['font-heading font-light text-warm-900', titleBottomMargin, titleSizeClasses[titleSize]]} id={titleId}>{title}</h1>
+  ) : (
+    <h2 class:list={['font-heading font-light text-warm-900', titleBottomMargin, titleSizeClasses[titleSize]]} id={titleId}>{title}</h2>
+  )}
+  {description && (
+    <p class:list={['font-body mx-auto leading-relaxed', descColorClasses[descriptionColor], descSizeClass, descMaxWidthClasses[descriptionMaxWidth]]}>{description}</p>
+  )}
+</div>

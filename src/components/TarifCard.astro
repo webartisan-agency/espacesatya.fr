@@ -13,29 +13,35 @@ const popoverId = `tarif-pop-${index}`;
 const needsPopover = description && description.length > 80;
 ---
 
-<div class="bg-white rounded-2xl p-5 border border-warm-200 shadow-sm hover:shadow-md transition-shadow">
-  <div class="flex items-start justify-between gap-3">
+{needsPopover ? (
+<button popovertarget={popoverId} class="tarif-card tarif-card--clickable">
+  <div class="flex items-start justify-between gap-3 text-left">
     <div class="min-w-0">
       <p class="font-body font-semibold text-warm-800">{prestation}</p>
       {description && (
-        <div class="mt-0.5">
-          <p class="font-body text-sm text-warm-500 leading-relaxed line-clamp-2">{description}</p>
-          {needsPopover && (
-            <>
-              <button popovertarget={popoverId} class="font-body text-xs text-terra-500 hover:text-terra-700 cursor-pointer mt-0.5 transition-colors">
-                Lire la suite
-              </button>
-              <div id={popoverId} popover class="tarif-popover">
-                <p class="font-body font-semibold text-warm-800 mb-2">{prestation}</p>
-                <p class="font-body text-sm text-warm-600 leading-relaxed">{description}</p>
-                {duree && <p class="font-body text-sm text-warm-400 mt-2">{duree}</p>}
-                {note && <p class="font-body text-xs text-sage-600 mt-1">{note}</p>}
-                {prix && <p class="font-heading text-xl font-semibold text-terra-500 mt-3">{prix}</p>}
-              </div>
-            </>
-          )}
-        </div>
+        <p class="font-body text-sm text-warm-500 leading-relaxed line-clamp-2 mt-0.5">{description}</p>
       )}
+      <span class="font-body text-xs text-terra-500 mt-1 inline-block">Lire la suite</span>
+      {duree && <p class="font-body text-sm text-warm-400 mt-0.5">{duree}</p>}
+      {note && <p class="font-body text-xs text-sage-600 mt-1">{note}</p>}
+    </div>
+    {prix ? (
+      <span class="font-heading text-2xl font-semibold text-terra-500 shrink-0">{prix}</span>
+    ) : (
+      <span class="w-9 h-9 bg-sage-100 rounded-full flex items-center justify-center shrink-0">
+        <svg class="w-4 h-4 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+        </svg>
+      </span>
+    )}
+  </div>
+</button>
+) : (
+<div class="tarif-card">
+  <div class="flex items-start justify-between gap-3">
+    <div class="min-w-0">
+      <p class="font-body font-semibold text-warm-800">{prestation}</p>
+      {description && <p class="font-body text-sm text-warm-500 leading-relaxed mt-0.5">{description}</p>}
       {duree && <p class="font-body text-sm text-warm-400 mt-0.5">{duree}</p>}
       {note && <p class="font-body text-xs text-sage-600 mt-1">{note}</p>}
     </div>
@@ -50,8 +56,37 @@ const needsPopover = description && description.length > 80;
     )}
   </div>
 </div>
+)}
+
+{needsPopover && (
+  <div id={popoverId} popover class="tarif-popover">
+    <p class="font-body font-semibold text-warm-800 mb-2">{prestation}</p>
+    <p class="font-body text-sm text-warm-600 leading-relaxed">{description}</p>
+    {duree && <p class="font-body text-sm text-warm-400 mt-2">{duree}</p>}
+    {note && <p class="font-body text-xs text-sage-600 mt-1">{note}</p>}
+    {prix && <p class="font-heading text-xl font-semibold text-terra-500 mt-3">{prix}</p>}
+  </div>
+)}
 
 <style>
+  .tarif-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--color-warm-200);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    transition: box-shadow .2s;
+    width: 100%;
+  }
+
+  .tarif-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1);
+  }
+
+  .tarif-card--clickable {
+    cursor: pointer;
+  }
+
   .tarif-popover {
     max-width: 360px;
     padding: 1.25rem;

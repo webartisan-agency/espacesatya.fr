@@ -10,7 +10,11 @@ Site vitrine du cabinet pluridisciplinaire **Espace Satya** (bien-être, soins �
 
 ## Déploiement
 
-- **Netlify** — déploiement automatique à chaque push sur `main`
+- **Netlify** — pas de lien GitHub automatique, déployer manuellement via CLI :
+  ```sh
+  NETLIFY_AUTH_TOKEN=$NETLIFY_TOKEN netlify deploy --prod --dir=dist
+  ```
+  Le token est dans le vault (`NETLIFY_TOKEN`).
 - Site ID : `aad12ad9-6337-41fc-8c83-eb2a551b3d1a`
 - Domaine : `espacesatya.fr`
 

@@ -5,6 +5,7 @@ import PraticienHero from '../../components/PraticienHero.astro';
 import TarifsSection from '../../components/TarifsSection.astro';
 import PraticienNav from '../../components/PraticienNav.astro';
 import { getCollection, render } from 'astro:content';
+import { getActivePraticiens } from '../../data/praticiens';
 
 export async function getStaticPaths() {
   const praticiens = await getCollection('praticiens');
@@ -19,8 +20,7 @@ const { Content } = await render(praticien);
 const base = import.meta.env.BASE_URL;
 
 // Navigation entre praticiens
-const allPraticiens = await getCollection('praticiens', ({ data }) => data.actif);
-allPraticiens.sort((a, b) => a.data.ordre - b.data.ordre);
+const allPraticiens = await getActivePraticiens();
 const currentIdx = allPraticiens.findIndex((p) => p.id === praticien.id);
 const prev = currentIdx > 0 ? allPraticiens[currentIdx - 1] : null;
 const next = currentIdx < allPraticiens.length - 1 ? allPraticiens[currentIdx + 1] : null;
@@ -43,7 +43,7 @@ const next = currentIdx < allPraticiens.length - 1 ? allPraticiens[currentIdx + 
           [&_ul]:font-body [&_ul]:text-warm-600 [&_ul]:space-y-2 [&_ul]:mb-4
           [&_li]:leading-relaxed [&_li]:pl-1
           [&_strong]:text-warm-800 [&_strong]:font-semibold
-          [&_blockquote]:border-l-4 [&_blockquote]:border-sage-300 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-warm-500
+          [&_blockquote]:border-l-4 [&_blockquote]:border-sage-300 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-warm-600
           [&_a]:text-sage-600 [&_a]:hover:text-sage-700 [&_a:hover]:underline">
           <Content />
         </div>
@@ -53,7 +53,7 @@ const next = currentIdx < allPraticiens.length - 1 ? allPraticiens[currentIdx + 
         <!-- CTA contact -->
         <div class="mt-12 bg-sage-50 rounded-2xl p-8 border border-sage-200 text-center">
           <p class="font-heading text-2xl font-light text-warm-900 mb-2">Envie d'en savoir plus ?</p>
-          <p class="font-body text-warm-500 mb-5">Contactez {praticien.data.nom} ou l'Espace Satya pour toute question.</p>
+          <p class="font-body text-warm-600 mb-5">Contactez {praticien.data.nom} ou l'Espace Satya pour toute question.</p>
           <Button href={`${base}contact/`} size="md" shadow="sm">
             Nous contacter
           </Button>

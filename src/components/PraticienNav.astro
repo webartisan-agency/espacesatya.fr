@@ -21,17 +21,17 @@ const { prev, next, base } = Astro.props;
       <a href={`${base}praticiens/${prev.id}/`}
          class="flex items-center gap-3 group text-left max-w-[200px]">
         <span class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:bg-sage-100 transition-colors shrink-0">
-          <Icon name="heroicons:chevron-left" class="w-5 h-5 text-warm-500" />
+          <Icon name="heroicons:chevron-left" class="w-5 h-5 text-warm-600" />
         </span>
         <div>
-          <p class="font-body text-xs text-warm-400">Précédent</p>
+          <p class="font-body text-xs text-warm-500">Précédent</p>
           <p class="font-heading text-warm-700 font-medium group-hover:text-sage-600 transition-colors">{prev.data.nom}</p>
         </div>
       </a>
     ) : <div />}
 
     <a href={`${base}praticiens/`}
-       class="font-body text-sm text-warm-500 hover:text-sage-600 transition-colors hidden sm:block">
+       class="font-body text-sm text-warm-600 hover:text-sage-600 transition-colors hidden sm:block">
       Toutes les praticien·ne·s
     </a>
 
@@ -39,11 +39,11 @@ const { prev, next, base } = Astro.props;
       <a href={`${base}praticiens/${next.id}/`}
          class="flex items-center gap-3 group text-right max-w-[200px]">
         <div>
-          <p class="font-body text-xs text-warm-400">Suivant·e</p>
+          <p class="font-body text-xs text-warm-500">Suivant·e</p>
           <p class="font-heading text-warm-700 font-medium group-hover:text-sage-600 transition-colors">{next.data.nom}</p>
         </div>
         <span class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:bg-sage-100 transition-colors shrink-0">
-          <Icon name="heroicons:chevron-right" class="w-5 h-5 text-warm-500" />
+          <Icon name="heroicons:chevron-right" class="w-5 h-5 text-warm-600" />
         </span>
       </a>
     ) : <div />}

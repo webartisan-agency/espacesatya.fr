@@ -18,9 +18,9 @@ const needsDialog = description && description.length > 80;
   <div class="flex items-start justify-between gap-3 text-left">
     <div class="min-w-0">
       <p class="font-body font-semibold text-warm-800">{prestation}</p>
-      <p class="font-body text-sm text-warm-500 leading-relaxed line-clamp-2 mt-0.5">{description}</p>
+      <p class="font-body text-sm text-warm-600 leading-relaxed line-clamp-2 mt-0.5">{description}</p>
       <span class="font-body text-xs text-terra-500 mt-1 inline-block">Lire la suite</span>
-      {duree && <p class="font-body text-sm text-warm-400 mt-0.5">{duree}</p>}
+      {duree && <p class="font-body text-sm text-warm-500 mt-0.5">{duree}</p>}
       {note && <p class="font-body text-xs text-sage-600 mt-1">{note}</p>}
     </div>
     {prix ? (
@@ -40,7 +40,7 @@ const needsDialog = description && description.length > 80;
   </button>
   <p class="font-body font-semibold text-warm-800 mb-2">{prestation}</p>
   <p class="font-body text-sm text-warm-600 leading-relaxed">{description}</p>
-  {duree && <p class="font-body text-sm text-warm-400 mt-2">{duree}</p>}
+  {duree && <p class="font-body text-sm text-warm-500 mt-2">{duree}</p>}
   {note && <p class="font-body text-xs text-sage-600 mt-1">{note}</p>}
   {prix && <p class="font-heading text-xl font-semibold text-terra-500 mt-3">{prix}</p>}
 </dialog>
@@ -49,8 +49,8 @@ const needsDialog = description && description.length > 80;
   <div class="flex items-start justify-between gap-3">
     <div class="min-w-0">
       <p class="font-body font-semibold text-warm-800">{prestation}</p>
-      {description && <p class="font-body text-sm text-warm-500 leading-relaxed mt-0.5">{description}</p>}
-      {duree && <p class="font-body text-sm text-warm-400 mt-0.5">{duree}</p>}
+      {description && <p class="font-body text-sm text-warm-600 leading-relaxed mt-0.5">{description}</p>}
+      {duree && <p class="font-body text-sm text-warm-500 mt-0.5">{duree}</p>}
       {note && <p class="font-body text-xs text-sage-600 mt-1">{note}</p>}
     </div>
     {prix ? (

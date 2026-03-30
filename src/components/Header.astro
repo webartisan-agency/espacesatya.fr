@@ -46,6 +46,7 @@ function isActive(href: string) {
                     ? 'text-sage-700 bg-sage-100'
                     : 'text-warm-600 hover:text-sage-700 hover:bg-sage-50',
                 ]}
+                {...(isActive(link.href) ? {'aria-current': 'page' as const} : {})}
               >
                 {link.label}
               </a>
@@ -94,6 +95,7 @@ function isActive(href: string) {
               ? 'text-sage-700 bg-sage-100'
               : 'text-warm-700 hover:text-sage-700 hover:bg-sage-50',
           ]}
+          {...(isActive(link.href) ? {'aria-current': 'page' as const} : {})}
         >
           {link.label}
         </a>
@@ -118,6 +120,7 @@ function isActive(href: string) {
     const isOpen = menu?.classList.contains('hidden') === false;
     menu?.classList.toggle('hidden');
     toggle.setAttribute('aria-expanded', String(!isOpen));
+    toggle.setAttribute('aria-label', !isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
     if (!isOpen) {
       b1?.classList.add('rotate-45', 'translate-y-2');
       b2?.classList.add('opacity-0');

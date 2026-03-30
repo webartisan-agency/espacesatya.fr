@@ -110,7 +110,7 @@ const base = import.meta.env.BASE_URL;
             <div class="bg-white rounded-2xl p-5 border border-warm-200/50 shadow-sm">
               <Icon name={u.icon} class="w-6 h-6 text-sage-500 mb-3" />
               <h3 class="font-heading text-lg font-semibold text-warm-900 mb-1">{u.label}</h3>
-              <p class="font-body text-sm text-warm-500 leading-relaxed">{u.desc}</p>
+              <p class="font-body text-sm text-warm-600 leading-relaxed">{u.desc}</p>
             </div>
           ))}
         </div>
@@ -143,9 +143,9 @@ const base = import.meta.env.BASE_URL;
                     ⭐ Populaire
                   </span>
                 )}
-                <p class="font-body text-warm-500 text-sm mb-2">{t.duree}</p>
+                <p class="font-body text-warm-600 text-sm mb-2">{t.duree}</p>
                 <p class="font-heading text-3xl font-semibold text-terra-500 mb-2">{t.prix}</p>
-                <p class="font-body text-warm-400 text-xs">{t.desc}</p>
+                <p class="font-body text-warm-500 text-xs">{t.desc}</p>
               </div>
             ))}
           </div>
@@ -154,7 +154,7 @@ const base = import.meta.env.BASE_URL;
         <!-- Forfaits récurrents -->
         <div>
           <h3 class="font-heading text-2xl font-semibold text-warm-800 mb-2">Forfaits récurrents</h3>
-          <p class="font-body text-warm-500 text-sm mb-6">Pour les profs de yoga, pilates, coachs et formateurs avec des créneaux réguliers. Économisez jusqu'à 30%.</p>
+          <p class="font-body text-warm-600 text-sm mb-6">Pour les profs de yoga, pilates, coachs et formateurs avec des créneaux réguliers. Économisez jusqu'à 30%.</p>
           <div class="bg-white rounded-3xl border border-warm-200 overflow-hidden shadow-sm">
             <table class="w-full">
               <thead class="bg-sage-50 border-b border-warm-200">
@@ -177,14 +177,14 @@ const base = import.meta.env.BASE_URL;
                       <span class="font-heading text-xl font-semibold text-terra-500">{f.prix}</span>
                     </td>
                     <td class="px-6 py-4 text-center hidden sm:table-cell">
-                      <span class="font-body text-sm text-warm-400">{f.engagement}</span>
+                      <span class="font-body text-sm text-warm-500">{f.engagement}</span>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p class="font-body text-xs text-warm-400 mt-3 text-center">
+          <p class="font-body text-xs text-warm-500 mt-3 text-center">
             ✓ RC Pro du locataire requise &nbsp;·&nbsp; ✓ Caution d'un mois de forfait &nbsp;·&nbsp; ✓ Tarif préférentiel pour les praticiennes de l'Espace Satya (-15 à -20%)
           </p>
         </div>
@@ -215,7 +215,7 @@ const base = import.meta.env.BASE_URL;
             <Icon name="heroicons:envelope" class="w-5 h-5" />
             Envoyer ma demande par email
           </Button>
-          <p class="font-body text-xs text-warm-500 mt-4">contact@espacesatya.fr</p>
+          <p class="font-body text-xs text-warm-600 mt-4">contact@espacesatya.fr</p>
         </div>
       </div>
     </section>

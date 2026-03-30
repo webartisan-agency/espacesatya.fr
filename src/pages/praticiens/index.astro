@@ -4,10 +4,9 @@ import { Icon } from 'astro-icon/components';
 import SectionHeader from '../../components/SectionHeader.astro';
 import IconBadge from '../../components/IconBadge.astro';
 import PraticienCard from '../../components/PraticienCard.astro';
-import { getCollection } from 'astro:content';
+import { getActivePraticiens } from '../../data/praticiens';
 
-const praticiens = await getCollection('praticiens', ({ data }) => data.actif);
-praticiens.sort((a, b) => a.data.ordre - b.data.ordre);
+const praticiens = await getActivePraticiens();
 
 const base = import.meta.env.BASE_URL;
 ---

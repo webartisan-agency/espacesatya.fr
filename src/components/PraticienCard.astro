@@ -105,13 +105,13 @@ const href = `${base}praticiens/${slug}/`;
     {(telephone || email || doctolib || siteWeb) && (
       <div class="flex flex-wrap items-center gap-3 mt-4 pt-3 border-t border-warm-100">
         {telephone && (
-          <a href={`tel:${telephone.replace(/\s/g, '')}`} class="relative z-10 inline-flex items-center gap-1 font-body text-xs text-warm-500 hover:text-sage-600 transition-colors">
+          <a href={`tel:${telephone.replace(/\s/g, '')}`} class="relative z-10 inline-flex items-center gap-1 font-body text-xs text-warm-600 hover:text-sage-600 transition-colors">
             <Icon name="heroicons:phone" class="w-3.5 h-3.5" />
             {telephone}
           </a>
         )}
         {email && (
-          <a href={`mailto:${email}`} class="relative z-10 inline-flex items-center gap-1 font-body text-xs text-warm-500 hover:text-sage-600 transition-colors">
+          <a href={`mailto:${email}`} class="relative z-10 inline-flex items-center gap-1 font-body text-xs text-warm-600 hover:text-sage-600 transition-colors">
             <Icon name="heroicons:envelope" class="w-3.5 h-3.5" />
             Email
           </a>

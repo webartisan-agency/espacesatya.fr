@@ -7,13 +7,12 @@ import InfoCard from '../components/InfoCard.astro';
 import HomeHero from '../components/HomeHero.astro';
 import CtaSection from '../components/CtaSection.astro';
 import PraticienCard from '../components/PraticienCard.astro';
-import { getCollection } from 'astro:content';
+import { getActivePraticiens } from '../data/praticiens';
 import { Image } from 'astro:assets';
 
 import equipeImg from '../assets/photos/equipe.jpeg';
 
-const praticiens = await getCollection('praticiens', ({ data }) => data.actif);
-praticiens.sort((a, b) => a.data.ordre - b.data.ordre);
+const praticiens = await getActivePraticiens();
 
 const base = import.meta.env.BASE_URL;
 
@@ -30,7 +29,8 @@ const jsonLd = {
     "postalCode": "66200",
     "addressCountry": "FR"
   },
-  "hasMap": "https://maps.google.com/?q=Espace+Satya+Elne"
+  "hasMap": "https://maps.google.com/?q=Espace+Satya+Elne",
+  "email": "contact@espacesatya.fr"
 };
 
 const valeurs = [
@@ -161,7 +161,7 @@ const valeurs = [
     <section class="py-16 px-4 md:px-8 bg-warm-100">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="font-heading text-3xl md:text-4xl font-light text-warm-900 mb-3">Venir nous voir</h2>
-        <p class="font-body text-warm-500 mb-8">Facilement accessible depuis Perpignan et la côte méditerranéenne.</p>
+        <p class="font-body text-warm-600 mb-8">Facilement accessible depuis Perpignan et la côte méditerranéenne.</p>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
           {[
             { icon: 'heroicons:map-pin', title: 'Adresse', content: '17 bd des Évadés de France\n1er étage, Épicentre\n66200 Elne' },
